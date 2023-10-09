@@ -107,7 +107,7 @@ export const animate = function () {
               when the door is pressed, scene changes to the gift room. Again, the msg will be displayed, after 
               which, the user will be asked to open the gift and the button with gift will appear.
           */
-
+      haunt.pause()
       door.play();
       transition(hallway);
       CTAtext.innerHTML = "Gift ta kholo ☝️";
