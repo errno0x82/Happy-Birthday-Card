@@ -64,7 +64,7 @@ const transition = (currentScene) => {
 
 export const animate = function () {
 
-  CTAtext.innerHTML = "Click the Light Bulb<br><br><br>";
+  CTAtext.innerHTML = "Light ta jalao<br><br><br>";
   CTAtext.style.marginTop = "-5px";
   readMsg(blackText);
 
@@ -79,7 +79,7 @@ export const animate = function () {
 
       light.play();
       transition(darkroom);
-      CTAtext.innerHTML = "Click the Door";
+      CTAtext.innerHTML = "Dhorja ta kholo";
       setTimeout(function () {
         button.classList.add("door-out");
         button.classList.remove("switch");
