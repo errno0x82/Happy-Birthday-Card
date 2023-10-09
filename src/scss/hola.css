@@ -25,7 +25,6 @@ body {
         display: block;
     }
 
-    /* Hide other content when in landscape mode */
     body > *:not(.landscape-message) {
         display: none;
     }
