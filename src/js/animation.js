@@ -65,7 +65,7 @@ const transition = (currentScene) => {
 export const animate = function () {
 
   CTAtext.innerHTML = "Click the Light Bulb<br><br><br>";
-  
+  CTAtext.style.marginTop = "-5px";
   readMsg(blackText);
 
   button.addEventListener("click", function () {
