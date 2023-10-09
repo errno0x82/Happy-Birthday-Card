@@ -110,7 +110,7 @@ export const animate = function () {
 
       door.play();
       transition(hallway);
-      CTAtext.innerHTML = "Click on the Gift";
+      CTAtext.innerHTML = "Gift ta kholo";
       setTimeout(function () {
         button.classList.add("gift");
         button.classList.remove("door-in");
