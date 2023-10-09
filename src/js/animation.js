@@ -79,7 +79,7 @@ export const animate = function () {
 
       light.play();
       transition(darkroom);
-      CTAtext.innerHTML = "Dhorja ta kholo ☝️";
+      CTAtext.innerHTML = "Dorja ta kholo ☝️";
       setTimeout(function () {
         button.classList.add("door-out");
         button.classList.remove("switch");
