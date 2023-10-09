@@ -1,0 +1,32 @@
+body {
+    overflow: hidden;
+}
+
+.landscape-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 20%;
+}
+
+@media (orientation: landscape) {
+    body {
+        overflow: hidden;
+    }
+
+    .landscape-message {
+        display: block;
+    }
+
+    /* Hide other content when in landscape mode */
+    body > *:not(.landscape-message) {
+        display: none;
+    }
+}
