@@ -64,7 +64,16 @@ const transition = (currentScene) => {
 
 export const animate = function () {
   CTAtext.innerHTML = "Click the Light Bulb.";
+  
+  // Get the element with the id "CTAtext"
+  var CTAtext = document.getElementById("CTAtext");
 
+  // Change the text content of the element
+  CTAtext.innerHTML = "Click the Light Bulb.";
+
+  // Move the element upwards by adjusting the marginTop
+  CTAtext.style.marginTop = "-10px"; // Adjust the value as needed
+  
   readMsg(blackText);
 
   button.addEventListener("click", function () {
