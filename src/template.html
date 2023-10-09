@@ -154,7 +154,8 @@
       <p class="hall-text">I Love you ♥️</p>
       <p class="hall-text">Chol abar ghor e jai</p>
       <script>
-        document.querySelector('.haunt-aud').pause();
+       const audioElement = document.querySelector('.haunt-aud');
+       audioElement.load(); // This will reset and stop the audio
       </script>
     </div>
 
