@@ -14,39 +14,20 @@ if (/Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent))
 }
 
 
-let isFrozen = false;
-
-function freezeWebsite() {
-    if (!isFrozen) {
-        // Freeze the website
-        document.body.style.pointerEvents = 'none';
-        isFrozen = true;
-    }
-}
-
-function unfreezeWebsite() {
-    if (isFrozen) {
-        // Unfreeze the website
-        document.body.style.pointerEvents = 'auto';
-        isFrozen = false;
-    }
-}
-
 window.addEventListener('resize', function () {
     if (window.orientation === 0 || window.orientation === 180) {
-        // Portrait orientation
-        unfreezeWebsite();
+        document.querySelector('.landscape-message').style.display = 'none';
+        document.body.style.overflow = 'auto';
     } else {
-        // Landscape orientation
-        freezeWebsite();
+        document.querySelector('.landscape-message').style.display = 'block';
+        document.body.style.overflow = 'hidden';
     }
 });
 
-// Check the orientation on page load
 window.addEventListener('load', function () {
     if (window.orientation !== undefined && (window.orientation === 90 || window.orientation === -90)) {
-        // Landscape orientation on page load
-        freezeWebsite();
+        document.querySelector('.landscape-message').style.display = 'block';
+        document.body.style.overflow = 'hidden';
     }
 });
 
