@@ -13,21 +13,39 @@ if (/Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent))
     document.getElementsByTagName('html')[0].innerHTML = '<h1>Hey babe, this site works on Android smartphones only!</h1>';
 }
 
+let isFrozen = false;
+
+function freezeWebsite() {
+    if (!isFrozen) {
+        // Freeze the website
+        document.body.style.pointerEvents = 'none';
+        isFrozen = true;
+    }
+}
+
+function unfreezeWebsite() {
+    if (isFrozen) {
+        // Unfreeze the website
+        document.body.style.pointerEvents = 'auto';
+        isFrozen = false;
+    }
+}
 
 window.addEventListener('resize', function () {
     if (window.orientation === 0 || window.orientation === 180) {
-        document.querySelector('.landscape-message').style.display = 'none';
-        document.body.style.overflow = 'auto';
+        // Portrait orientation
+        unfreezeWebsite();
     } else {
-        document.querySelector('.landscape-message').style.display = 'block';
-        document.body.style.overflow = 'hidden';
+        // Landscape orientation
+        freezeWebsite();
     }
 });
 
+// Check the orientation on page load
 window.addEventListener('load', function () {
     if (window.orientation !== undefined && (window.orientation === 90 || window.orientation === -90)) {
-        document.querySelector('.landscape-message').style.display = 'block';
-        document.body.style.overflow = 'hidden';
+        // Landscape orientation on page load
+        freezeWebsite();
     }
 });
 
