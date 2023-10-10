@@ -186,6 +186,7 @@ export const animate = function () {
           frames[0].style.opacity = "1";
         }, 1500);   
         return;
+        setTimeout(closePageWithCountdown(15), readTime); 
       }
 
       //This value is stored in the --readTime css variable of root element and is calculated dynamically at build time.
@@ -222,5 +223,4 @@ export const animate = function () {
       }, (readTime + 3) * 1000);
     }
   });   
-setTimeout(closePageWithCountdown(15), readTime); 
 };
