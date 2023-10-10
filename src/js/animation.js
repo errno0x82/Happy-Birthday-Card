@@ -198,13 +198,8 @@ export const animate = function () {
         ) + 5;
                 
       frames[1].style.display = "flex";
-      const startTime = new Date().getTime();
-      const targetTime = startTime + readTime*1000; // 10 seconds in milliseconds
-
-      while (new Date().getTime() < targetTime) {
-      // This loop will do nothing for 10 seconds
-      }
-      closePageWithCountdown(20);
+      
+      closePageWithCountdown(readTime+20);
       
       setTimeout(() => {
         frames[1].classList.add("appear");
