@@ -26,7 +26,8 @@ function closePageWithCountdown(seconds) {
       toInsert.style.textAlign = "center";
       toInsert.style.width = "100%";
       document.body.appendChild(toInsert);
-    
+      document.body.style.overflow = "hidden";
+      
       var colors = ['red', 'blue', 'green']; // List of rainbow colors
       var colorIndex = 0; // Initialize color index
 
@@ -183,8 +184,8 @@ export const animate = function () {
         setTimeout(() => {
           frames[0].classList.add("appear");
           frames[0].style.opacity = "1";
-        }, 1500);
-        closePageWithCountdown(15);
+          closePageWithCountdown(15);
+        }, 1500);   
         return;
       }
 
@@ -197,7 +198,7 @@ export const animate = function () {
         ) + 5;
             
       frames[1].style.display = "flex";
-      closePageWithCountdown(15);
+      
       setTimeout(() => {
         frames[1].classList.add("appear");
         frames[1].style.opacity = "1";
