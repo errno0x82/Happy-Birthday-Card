@@ -148,7 +148,35 @@ export const animate = function () {
             "--readTime"
           )
         ) + 5;
+      
+      function closePageWithCountdown(seconds) {
+       const countdownElement = document.createElement("countdownit");
+       countdownElement.style.position = "fixed";
+       countdownElement.style.top = "0";
+       countdownElement.style.left = "0";
+       countdownElement.style.backgroundColor = "red";
+       countdownElement.style.color = "white";
+       countdownElement.style.padding = "5px";
 
+       document.body.appendChild(countdownElement);
+
+       function updateCountdown() {
+        countdownElement.textContent = `Page will close in ${seconds} seconds`;
+
+        if (seconds === 0) {
+         document.body.removeChild(countdownElement);
+         window.close();
+        } else {
+         seconds--;
+         setTimeout(updateCountdown, 1000);
+        }
+       }
+      updateCountdown();
+      }
+
+      // Call the function with the desired countdown time, e.g., 10 seconds
+      closePageWithCountdown(15);
+      
       frames[1].style.display = "flex";
 
       setTimeout(() => {
@@ -174,35 +202,5 @@ export const animate = function () {
         frames[0].style.opacity = "1";
       }, (readTime + 3) * 1000);
     }
-  });
-
-function closePageWithCountdown(seconds) {
-  const countdownElement = document.createElement("countdownit");
-  countdownElement.style.position = "fixed";
-  countdownElement.style.top = "0";
-  countdownElement.style.left = "0";
-  countdownElement.style.backgroundColor = "red";
-  countdownElement.style.color = "white";
-  countdownElement.style.padding = "5px";
-
-  document.body.appendChild(countdownElement);
-
-  function updateCountdown() {
-    countdownElement.textContent = `Page will close in ${seconds} seconds`;
-
-    if (seconds === 0) {
-      document.body.removeChild(countdownElement);
-      window.close();
-    } else {
-      seconds--;
-      setTimeout(updateCountdown, 1000);
-    }
-  }
-
-  updateCountdown();
-}
-
-// Call the function with the desired countdown time, e.g., 10 seconds
-closePageWithCountdown(10);
-  
+  }); 
 };
