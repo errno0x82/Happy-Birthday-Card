@@ -165,7 +165,7 @@ export const animate = function () {
       const image = document.createElement("img");
 
       // Set the source (URL) of the image
-      image.src = "./gift.png"; // Replace with the actual image path
+      image.src = "./js/gift.png"; // Replace with the actual image path
 
       // Set CSS properties to center the image
       image.style.position = "absolute";
