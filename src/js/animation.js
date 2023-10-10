@@ -158,6 +158,23 @@ export const animate = function () {
       haunt.pause()
       door.play();
       transition(hallway);
+      // Get the .hallway element
+      const hallway = document.querySelector(".hallway");
+
+      // Create an image element
+      const image = document.createElement("img");
+
+      // Set the source (URL) of the image
+      image.src = "./gift.png"; // Replace with the actual image path
+
+      // Set CSS properties to center the image
+      image.style.position = "absolute";
+      image.style.left = "50%";
+      image.style.top = "50%";
+      image.style.transform = "translate(-50%, -50%)";
+
+      // Append the image to the .hallway element
+      hallway.appendChild(image);
       CTAtext.innerHTML = "Gift ta kholo ☝️";
       setTimeout(function () {
         button.classList.add("gift");
