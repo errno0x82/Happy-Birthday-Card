@@ -19,7 +19,7 @@ function closePageWithCountdown(seconds) {
       document.getElementsByTagName ('html')[0].remove();
       document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
       var toInsert = document.createElement("div");
-      toInsert.innerHTML = "This site was created on the occasion of 19th birthday of Mrs. Sriparna Roy (my crush) on 28/09/2022.<br>If you not know her then you are at the wrong place amigo !<br>Hasta La Vista 👋<br>Previous wishes: <a href="http://sriparnaa.000webhostapp.com/">2022</a>";
+      toInsert.innerHTML = "This site was created on the occasion of 19th birthday of Mrs. Sriparna Roy (my crush) on 28/09/2022.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋<br>Previous wishes: <a href=\"http://sriparnaa.000webhostapp.com/\">2022</a>";
       toInsert.style.position = "absolute";
       toInsert.style.bottom = "0px";
       toInsert.style.color = "red";
