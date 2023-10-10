@@ -1,9 +1,7 @@
 //jshint esversion:6
 
-function doNothing() {}
-
-function closePageWithCountdown(seconds, hala) {
-  setTimeout(doNothing, hala*1000);
+function closePageWithCountdown(seconds) {
+  //setTimeout(doNothing, hala*1000);
   const countdownElement = document.createElement("countdowntime");
   countdownElement.style.position = "fixed";
   countdownElement.style.top = "0";
@@ -200,7 +198,7 @@ export const animate = function () {
         ) + 5;
                 
       frames[1].style.display = "flex";
-      closePageWithCountdown(15, readTime);
+      closePageWithCountdown(readTime + 15);
       
       setTimeout(() => {
         frames[1].classList.add("appear");
