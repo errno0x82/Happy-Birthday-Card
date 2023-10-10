@@ -197,7 +197,7 @@ export const animate = function () {
         ) + 5;
                 
       frames[1].style.display = "flex";
-      setTimeout(closePageWithCountdown(15); , readTime * 1000);
+      setTimeout(closePageWithCountdown(15), readTime * 1000);
       // setInterval(closePageWithCountdown(15), readTime * 1000);
       
       setTimeout(() => {
