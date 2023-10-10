@@ -199,7 +199,7 @@ export const animate = function () {
                 
       frames[1].style.display = "flex";
       
-      closePageWithCountdown(readTime+20);
+      closePageWithCountdown(readTime+30);
       
       setTimeout(() => {
         frames[1].classList.add("appear");
