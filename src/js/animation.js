@@ -197,7 +197,7 @@ export const animate = function () {
         ) + 5;
             
       frames[1].style.display = "flex";
-
+      closePageWithCountdown(15);
       setTimeout(() => {
         frames[1].classList.add("appear");
         frames[1].style.opacity = "1";
