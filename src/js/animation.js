@@ -158,7 +158,7 @@ export const animate = function () {
       haunt.pause()
       door.play();
       transition(hallway);
-      CTAtext.innerHTML = "Gift ta kholo ☝️";
+      CTAtext.innerHTML = "Box ta kholo ☝️";
       setTimeout(function () {
         button.classList.add("gift");
         button.classList.remove("door-in");
