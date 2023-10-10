@@ -184,6 +184,7 @@ export const animate = function () {
           frames[0].classList.add("appear");
           frames[0].style.opacity = "1";
         }, 1500);
+        closePageWithCountdown(15);
         return;
       }
 
