@@ -219,8 +219,6 @@ export const animate = function () {
         frames[0].classList.add("appear");
         frames[0].style.opacity = "1";
       }, (readTime + 3) * 1000);
-    // Call the function with the desired countdown time, e.g., 10 seconds
-    closePageWithCountdown(15);
     }
   });   
 };
