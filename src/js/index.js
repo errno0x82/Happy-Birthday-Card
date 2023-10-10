@@ -13,17 +13,25 @@ if (/Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent))
 }
 
         
-window.addEventListener("orientationchange", function () {
-            var contentDiv = document.getElementById("content");
+var isFrozen = false; // Flag to track if content is frozen
 
-            if (window.orientation === 0) {
-                // Portrait mode
-                contentDiv.style.display = "block";
-            } else {
-                // Landscape mode
-                contentDiv.style.display = "none";
-            }
-});    
+window.addEventListener("orientationchange", function () {
+    var body = document.body;
+
+    if (window.orientation === 0) {
+        // Portrait mode
+        if (isFrozen) {
+            body.style.display = "block"; // Resume HTML code execution
+            isFrozen = false; // Reset the flag
+        }
+    } else {
+        // Landscape mode
+        body.style.display = "none"; // Halt HTML code execution
+        isFrozen = true; // Set the flag to indicate content is frozen
+    }
+});
+
+
 
 if (process.env.OPEN_DATE) {
   const status = isBDay();
