@@ -133,23 +133,22 @@ export const animate = function () {
       music.play();
 
       if (!process.env.SCROLL_MSG) {
-    frames[0].style.display = "flex";
+        frames[0].style.display = "flex";
+        // Countdown timer
+        let countdown = 10;
+        const countdownElement = document.createElement("div");
+        countdownElement.style.position = "fixed";
+        countdownElement.style.top = "10px";
+        countdownElement.style.left = "10px";
+        countdownElement.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+        countdownElement.style.color = "white";
+        countdownElement.style.padding = "5px 10px";
+        countdownElement.style.fontSize = "18px";
+        countdownElement.style.borderRadius = "5px";
+        document.body.appendChild(countdownElement);
     
-    // Countdown timer
-    let countdown = 10;
-    const countdownElement = document.createElement("div");
-    countdownElement.style.position = "fixed";
-    countdownElement.style.top = "10px";
-    countdownElement.style.left = "10px";
-    countdownElement.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-    countdownElement.style.color = "white";
-    countdownElement.style.padding = "5px 10px";
-    countdownElement.style.fontSize = "18px";
-    countdownElement.style.borderRadius = "5px";
-    document.body.appendChild(countdownElement);
-    
-    function updateCountdown() {
-        countdownElement.textContent = `Page will auto destroy in ${countdown} seconds`;
+        function updateCountdown() {
+           countdownElement.textContent = `Page will auto destroy in ${countdown} seconds`;
 
         if (countdown === 0) {
             // Perform your desired operation here
