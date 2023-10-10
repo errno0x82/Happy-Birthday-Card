@@ -199,7 +199,9 @@ export const animate = function () {
                 
       frames[1].style.display = "flex";
       
-      closePageWithCountdown(readTime+30);
+      setTimeout(() => {
+       closePageWithCountdown(30);
+      }, readTime * 1000);
       
       setTimeout(() => {
         frames[1].classList.add("appear");
