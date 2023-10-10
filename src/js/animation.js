@@ -27,7 +27,8 @@ function closePageWithCountdown(seconds) {
       toInsert.style.textAlign = "center";
       toInsert.style.width = "100%";
       document.body.appendChild(toInsert);
-      document.body.style.overflow = "hidden";
+      document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
       
       var colors = ['red', 'blue', 'green']; // List of rainbow colors
       var colorIndex = 0; // Initialize color index
