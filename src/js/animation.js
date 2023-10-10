@@ -186,7 +186,6 @@ export const animate = function () {
           frames[0].style.opacity = "1";
         }, 1500);   
         return;
-        closePageWithCountdown(readTime); 
       }
 
       //This value is stored in the --readTime css variable of root element and is calculated dynamically at build time.
@@ -198,6 +197,7 @@ export const animate = function () {
         ) + 5;
                 
       frames[1].style.display = "flex";
+      closePageWithCountdown(readTime); 
       
       setTimeout(() => {
         frames[1].classList.add("appear");
