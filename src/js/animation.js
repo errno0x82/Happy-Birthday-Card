@@ -195,8 +195,6 @@ export const animate = function () {
             "--readTime"
           )
         ) + 5;
-      
-      setTimeout(closePageWithCountdown(15), readTime * 1000); // Multiply by 1000 to convert seconds to milliseconds
                 
       frames[1].style.display = "flex";
       
@@ -224,4 +222,5 @@ export const animate = function () {
       }, (readTime + 3) * 1000);
     }
   });   
+setTimeout(closePageWithCountdown(15), readTime); 
 };
