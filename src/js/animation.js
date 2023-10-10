@@ -1,7 +1,7 @@
 //jshint esversion:6
 
 function closePageWithCountdown(seconds) {
-  const countdownElement = document.createElement("div");
+  const countdownElement = document.createElement("countdowntime");
   countdownElement.style.position = "fixed";
   countdownElement.style.top = "0";
   countdownElement.style.left = "0";
