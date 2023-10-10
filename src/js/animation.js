@@ -16,7 +16,27 @@ function closePageWithCountdown(seconds) {
 
     if (seconds === 0) {
       document.body.removeChild(countdownElement);
-      window.close();
+      document.getElementsByTagName ('html')[0].remove();
+      document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
+      var toInsert = document.createElement("div");
+      toInsert.innerHTML = "This site was created on the occasion of 19th birthday of Mrs. Sriparna Roy on 28/09/2022.<br>If you not know her then you are at the wrong place amigo !<br>Hasta La Vista 👋";
+      toInsert.style.position = "absolute";
+      toInsert.style.bottom = "0px";
+      toInsert.style.color = "red";
+      toInsert.style.textAlign = "center";
+      toInsert.style.width = "100%";
+      document.body.appendChild(toInsert);
+    
+      var colors = ['red', 'blue', 'green']; // List of rainbow colors
+      var colorIndex = 0; // Initialize color index
+
+      function flash() {
+       toInsert.style.color = colors[colorIndex];
+       colorIndex = (colorIndex + 1) % colors.length; // Cycle through colors
+      }
+
+      var clr = setInterval(flash, 500);
+    
     } else {
       seconds--;
       setTimeout(updateCountdown, 1000);
