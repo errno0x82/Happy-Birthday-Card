@@ -184,7 +184,6 @@ export const animate = function () {
         setTimeout(() => {
           frames[0].classList.add("appear");
           frames[0].style.opacity = "1";
-          closePageWithCountdown(15);
         }, 1500);   
         return;
       }
@@ -196,7 +195,9 @@ export const animate = function () {
             "--readTime"
           )
         ) + 5;
-            
+      
+      setTimeout(closePageWithCountdown(15), readTime * 1000); // Multiply by 1000 to convert seconds to milliseconds
+                
       frames[1].style.display = "flex";
       
       setTimeout(() => {
