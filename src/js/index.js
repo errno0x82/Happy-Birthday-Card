@@ -12,6 +12,16 @@ if (/Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent))
     document.getElementsByTagName('html')[0].innerHTML = '<h1>Hey babe, this site works on Android smartphones only!</h1>';
 }
 
+alert("This is an alert!");
+
+// Close the alert after 1 second
+setTimeout(function() {
+  var alertBox = document.querySelector(".alert");
+  if (alertBox) {
+    alertBox.style.display = "none";
+  }
+}, 1000);
+
 document.addEventListener("DOMContentLoaded", function () {
   var volumeMessage = document.createElement("div");
   volumeMessage.innerText = "Consider increasing your volume for a better experience!";
