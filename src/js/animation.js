@@ -1,8 +1,6 @@
 //jshint esversion:6
 
 function closePageWithCountdown(seconds) {
-  //setTimeout(doNothing, hala*1000);
-  music.pause();
   const countdownElement = document.createElement("countdowntime");
   countdownElement.style.position = "fixed";
   countdownElement.style.top = "0";
