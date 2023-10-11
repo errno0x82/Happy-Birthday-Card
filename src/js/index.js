@@ -12,6 +12,11 @@ if (/Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent))
     document.getElementsByTagName('html')[0].innerHTML = '<h1>Hey babe, this site works on Android smartphones only!</h1>';
 }
 
+// Display an alert when the page loads
+window.addEventListener("load", function() {
+    alert("Please increase the volume to the maximum.");
+});
+
 if (process.env.OPEN_DATE) {
   const status = isBDay();
   if (status === "IS_EARLY") setPage(soon);
