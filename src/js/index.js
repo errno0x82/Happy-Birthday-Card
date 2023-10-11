@@ -1,4 +1,4 @@
-//jshint esversion:8
+p//jshint esversion:8
 
 import { isBDay } from "./ext/openDate.js";
 import setPage from "./ext/setPage.js";
@@ -12,7 +12,7 @@ if (/Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent))
     document.getElementsByTagName('html')[0].innerHTML = '<h1>Hey babe, this site works on Android smartphones only!</h1>';
 }
 
-alert("Hi babe, consider increasing your volume for a better experience !");
+alert("Welcome Darling ♥️\nConsider increasing your volume to maximum for a better experience !");
 
 // Close the alert after 1 second
 setTimeout(function() {
