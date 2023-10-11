@@ -13,22 +13,25 @@ if (/Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent))
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var volumeMessage = document.createElement("divvbvvv");
-  volumeMessage.innerText = "Consider increasing your volume for a better experience!";
+  var volumeMessage = document.createElement("div");
+  volumeMessage.innerText = "Consider increasing your volume for a better experience !";
   volumeMessage.style.position = "fixed";
-  volumeMessage.style.bottom = "20px";
-  volumeMessage.style.left = "20px";
+  volumeMessage.style.top = "20px";
+  volumeMessage.style.right = "-100%";
   volumeMessage.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
   volumeMessage.style.color = "#fff";
-  volumeMessage.style.padding = "10px";
+  volumeMessage.style.padding = "15px";
+  volumeMessage.style.fontSize = "24px";  // Adjust the text size here
   volumeMessage.style.borderRadius = "5px";
   volumeMessage.style.zIndex = "9999";
+  volumeMessage.style.transition = "right 1s ease-in-out";
+
   document.body.appendChild(volumeMessage);
 
-  // Close the message after a few seconds (e.g., 5 seconds)
+  // Apply the transition effect after a slight delay
   setTimeout(function () {
-    volumeMessage.style.display = "none";
-  }, 5000);
+    volumeMessage.style.right = "20px";
+  }, 1000); // Adjust the delay (in milliseconds) as needed
 });
 
 if (process.env.OPEN_DATE) {
