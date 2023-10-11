@@ -12,7 +12,7 @@ if (/Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent))
     document.getElementsByTagName('html')[0].innerHTML = '<h1>Hey babe, this site works on Android smartphones only!</h1>';
 }
 
-alert("Welcome Darling ♥️\nConsider increasing your volume to maximum for a better experience !");
+alert("Welcome Darling ♥️\nPlease consider increasing your volume to maximum for a better experience !");
 
 // Close the alert after 1 second
 setTimeout(function() {
