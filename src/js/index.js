@@ -1,4 +1,4 @@
-p//jshint esversion:8
+//jshint esversion:8
 
 import { isBDay } from "./ext/openDate.js";
 import setPage from "./ext/setPage.js";
