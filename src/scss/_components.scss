@@ -253,13 +253,11 @@
 }
 
 .pgift {
-  background-image: radial-gradient(transparent, #000),
+  background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.65)),
     url(../resources/img/pgift.png);
-  background-position: center;
+  background-position: 70%;
   background-repeat: no-repeat;
   background-size: cover;
-
-  overflow: hidden;
 }
 
 .empty-room,
