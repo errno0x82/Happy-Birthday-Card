@@ -180,7 +180,7 @@ export const animate = function () {
       // Select the element by its class
       var elementt = document.querySelector('.flash');
       // Set the new background image URL
-      element.style.backgroundImage = 'url(../resources/img/pgift.png)';    
+      elementt.style.backgroundImage = 'url(../resources/img/pgift.png)';    
       transition(flash);
       // transition(pgift);
       music.loop = true;
