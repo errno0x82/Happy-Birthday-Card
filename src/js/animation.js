@@ -178,7 +178,7 @@ export const animate = function () {
       haunt.pause();
       blast.play();
       giftroom.style.display = "none";
-      // transition(flash);
+      transition(flash);
       transition(pgift);
       music.loop = true;
       music.play();
