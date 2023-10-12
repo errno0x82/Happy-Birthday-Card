@@ -158,7 +158,7 @@ export const animate = function () {
           */
       haunt.pause()
       door.play();
-      transition(pgift);
+      transition(hallway);
       // transition(pgift);
       CTAtext.innerHTML = "Box ta kholo ☝️";
       setTimeout(function () {
