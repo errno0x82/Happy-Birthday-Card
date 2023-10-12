@@ -254,19 +254,11 @@
   overflow: hidden;
 }
 
-.pgift {
-  background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.65)),
-    url(../resources/img/pgift.png);
-  background-position: 70%;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .empty-room,
 .giftroom,
 .content {
   background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.65)),
-    url(../resources/img/bedroom.svg);
+    url(../resources/img/pgift.png);
   background-position: 70%;
   background-repeat: no-repeat;
   background-size: cover;
