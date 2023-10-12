@@ -222,7 +222,6 @@
 .flash,
 .giftroom,
 .empty-room,
-.pgift,
 .hallway {
   text-align: center;
   position: absolute;
@@ -239,8 +238,7 @@
 }
 
 .giftroom,
-.empty-room,
-.pgift {
+.empty-room {
   background-color: #141852;
 }
 
