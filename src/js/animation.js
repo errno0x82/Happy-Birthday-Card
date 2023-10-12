@@ -177,6 +177,10 @@ export const animate = function () {
       haunt.pause();
       blast.play();
       giftroom.style.display = "none";
+      // Select the element by its class
+      var elementt = document.querySelector('.flash');
+      // Set the new background image URL
+      element.style.backgroundImage = 'url(../resources/img/pgift.png)';    
       transition(flash);
       // transition(pgift);
       music.loop = true;
