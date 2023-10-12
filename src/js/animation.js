@@ -142,8 +142,8 @@ export const animate = function () {
           */
 
       door.play();
-      //transition(room);
-      transition(pgift);
+      transition(room);
+      // transition(pgift);
       setTimeout(function () {
         haunt.play();
         haunt.loop = true;
