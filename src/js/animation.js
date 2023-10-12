@@ -52,7 +52,6 @@ const button = document.querySelector(".btn"),
   darkroom = document.querySelector(".darkroom"),
   giftroom = document.querySelector(".giftroom"),
   hallway = document.querySelector(".hallway"),
-  pgift = document.querySelector(".pgift"),
   room = document.querySelector(".empty-room"),
   flash = document.querySelector(".flash");
 
@@ -179,7 +178,7 @@ export const animate = function () {
       blast.play();
       giftroom.style.display = "none";
       transition(flash);
-      transition(pgift);
+      // transition(pgift);
       music.loop = true;
       music.play();
 
