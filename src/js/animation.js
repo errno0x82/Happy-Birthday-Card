@@ -167,8 +167,8 @@ export const animate = function () {
       objectElement.setAttribute('data', svgFilePath);
       objectElement.setAttribute('type', 'image/svg+xml');
       objectElement.style.display = 'none'; // Hide it initially
-      // hallway.appendChild(objectElement); // Append it to the 'hallway' element
-      hallway.innerHTML = objectElement;
+      hallway.appendChild(objectElement); // Append it to the 'hallway' element
+      // hallway.innerHTML = objectElement;
 
       transition(hallway);
       
