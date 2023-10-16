@@ -159,7 +159,6 @@ export const animate = function () {
       haunt.pause()
       door.play();
 
-      transition(hallway);
       
       // Specify the path to your SVG file
       const svgFilePath = '../resources/img/Hallway.svg';
@@ -169,7 +168,7 @@ export const animate = function () {
 
       // Set the 'data' attribute of the 'object' element to the SVG file path
       hallway.innerHTML = `<object data="${svgFilePath}" type="image/svg+xml"></object>`;
-
+      transition(hallway);
     
       CTAtext.innerHTML = "Open the box ☝️";
       setTimeout(function () {
