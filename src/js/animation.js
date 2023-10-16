@@ -159,8 +159,19 @@ export const animate = function () {
       haunt.pause()
       door.play();
       
-      //transition(hallway);
-      // transition(pgift);
+      transition(hallway);
+      
+      // Specify the path to your SVG file
+      const svgFilePath = '../resources/img/bedroom.svg';
+
+      // Create an object element and set attributes
+      const objectElement = document.createElement('object');
+      objectElement.setAttribute('data', svgFilePath);
+      objectElement.setAttribute('type', 'image/svg+xml');
+      objectElement.style.display = 'none'; // Hide it initially
+      hallway.appendChild(objectElement); // Append it to the 'hallway' element
+      // hallway.innerHTML = newBackgroundSVGContent;
+      
       CTAtext.innerHTML = "Open the box ☝️";
       setTimeout(function () {
         button.classList.add("gift");
