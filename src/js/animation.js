@@ -158,19 +158,20 @@ export const animate = function () {
           */
       haunt.pause()
       door.play();
+
+      transition(hallway);
       
       // Specify the path to your SVG file
       const svgFilePath = '../resources/img/hallway.svg';
 
       // Create an object element and set attributes
       const hallwayy = document.getElementById('hallway');
+      hallwayy.style.display = 'none';
       hallwayy.setAttribute('data', svgFilePath);
       hallwayy.setAttribute('type', 'image/svg+xml');
-      hallwayy.style.display = 'none'; // Hide it initially
-      // hallway.appendChild(objectElement); // Append it to the 'hallway' element
-      hallway.innerHTML = hallwayy;
-
-      transition(hallway)
+      // Hide it initially
+      //hallway.appendChild(); // Append it to the 'hallway' element
+      //hallway.innerHTML = hallwayy;
       
       CTAtext.innerHTML = "Open the box ☝️";
       setTimeout(function () {
