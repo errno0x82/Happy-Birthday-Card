@@ -162,17 +162,15 @@ export const animate = function () {
       transition(hallway);
       
       // Specify the path to your SVG file
-      const svgFilePath = '../resources/img/Hallway.png';
+      const svgFilePath = '../resources/img/Hallway.svg';
 
-      // Create an object element and set attributes
-      const hallwayy = document.getElementById('hallway');
-      hallwayy.style.display = 'none';
-      hallwayy.setAttribute('data', svgFilePath);
-      hallwayy.setAttribute('type', 'image/svg+xml');
-      // Hide it initially
-      //hallway.appendChild(); // Append it to the 'hallway' element
-      //hallway.innerHTML = hallwayy;
-      
+      // Get the 'hallway' element by its id
+      const hallway = document.getElementById('hallway');
+
+      // Set the 'data' attribute of the 'object' element to the SVG file path
+      hallway.innerHTML = `<object data="${svgFilePath}" type="image/svg+xml"></object>`;
+
+    
       CTAtext.innerHTML = "Open the box ☝️";
       setTimeout(function () {
         button.classList.add("gift");
