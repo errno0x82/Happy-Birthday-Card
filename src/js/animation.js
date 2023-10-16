@@ -162,7 +162,7 @@ export const animate = function () {
       transition(hallway);
       
       // Specify the path to your SVG file
-      const svgFilePath = '../resources/img/bedroom.svg';
+      const svgFilePath = '../resources/img/hallway.svg';
 
       // Create an object element and set attributes
       const objectElement = document.createElement('object');
