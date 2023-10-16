@@ -165,7 +165,7 @@ export const animate = function () {
 
       // Get the 'hallway' element by its id
       const hallway = document.getElementById('hallway');
-
+      hallway.style.display = 'none'; // Hide it initially
       // Set the 'data' attribute of the 'object' element to the SVG file path
       hallway.innerHTML = `<object data="${svgFilePath}" type="image/svg+xml"></object>`;
       transition(hallway);
