@@ -112,7 +112,7 @@ const transition = (currentScene) => {
 
 export const animate = function () {
 
-  CTAtext.innerHTML = "Light ta jalao ☝️<br><br><br>";
+  CTAtext.innerHTML = "Turn on the lights ☝️<br><br><br>";
   CTAtext.style.marginTop = "-5px";
   readMsg(blackText);
 
@@ -127,7 +127,7 @@ export const animate = function () {
 
       light.play();
       transition(darkroom);
-      CTAtext.innerHTML = "Dorja ta kholo ☝️";
+      CTAtext.innerHTML = "Open the door☝️";
       setTimeout(function () {
         button.classList.add("door-out");
         button.classList.remove("switch");
@@ -161,7 +161,7 @@ export const animate = function () {
       
       //transition(hallway);
       // transition(pgift);
-      CTAtext.innerHTML = "Box ta kholo ☝️";
+      CTAtext.innerHTML = "Open the box ☝️";
       setTimeout(function () {
         button.classList.add("gift");
         button.classList.remove("door-in");
