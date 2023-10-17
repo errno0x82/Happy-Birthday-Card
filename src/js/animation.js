@@ -127,7 +127,7 @@ export const animate = function () {
 
       light.play();
       transition(darkroom);
-      CTAtext.innerHTML = "Open the door☝️";
+      CTAtext.innerHTML = "Open the door ☝️";
       setTimeout(function () {
         button.classList.add("door-out");
         button.classList.remove("switch");
