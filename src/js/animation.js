@@ -141,7 +141,7 @@ export const animate = function () {
           */
 
       door.play();
-      transition(hallway);
+      transition(room);
       
       setTimeout(function () {
         haunt.play();
