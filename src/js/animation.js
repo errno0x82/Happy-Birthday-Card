@@ -15,17 +15,6 @@ function closePageWithCountdown(seconds) {
     countdownElement.textContent = `Page will close in ${seconds} seconds`;
 
     if (seconds === 0) {
-      countdownElement.textContent = "The page is now closing";
-      var rotatingCircle = document.createElement("div");
-      rotatingCircle.style.border = "5px solid #f3f3f3";
-      rotatingCircle.style.borderTop = "5px solid #3498db";
-      rotatingCircle.style.borderRadius = "50%";
-      rotatingCircle.style.width = "50px";
-      rotatingCircle.style.height = "50px";
-      rotatingCircle.style.animation = "spin 2s linear infinite";
-      
-      document.body.appendChild(rotatingCircle);
-
       document.body.removeChild(countdownElement);
       document.getElementsByTagName ('html')[0].remove();
       document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
