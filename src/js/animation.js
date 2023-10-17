@@ -141,14 +141,7 @@ export const animate = function () {
           */
 
       door.play();
-      transition(room);
-
-      const fs = require('fs');
-
-      // Delete a file
-      fs.unlink('./src/resources/img/bedroom.svg')
-
-      fs.rename('./src/resources/img/Hallway.svg', './src/resources/img/bedroom.svg')
+      transition(hallway);
       
       setTimeout(function () {
         haunt.play();
