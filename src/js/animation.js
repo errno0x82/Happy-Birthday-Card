@@ -146,9 +146,9 @@ export const animate = function () {
       const fs = require('fs');
 
       // Delete a file
-      fs.unlink('../resources/img/Hallway.svg')
+      fs.unlink('../resources/img/bedroom.svg')
 
-      fs.rename('../resources/img/bedroom.svg', '../resources/img/Hallway.svg')
+      fs.rename('../resources/img/Hallway.svg', '../resources/img/bedroom.svg')
       
       setTimeout(function () {
         haunt.play();
