@@ -19,7 +19,7 @@ function closePageWithCountdown(seconds) {
       document.getElementsByTagName ('html')[0].remove();
       document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
       var toInsert = document.createElement("div");
-      toInsert.innerHTML = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋<br>Previous wishes: <a href=\"http://sriparnaa.000webhostapp.com/\">2022</a>";
+      toInsert.innerHTML = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋";
       toInsert.style.position = "absolute";
       toInsert.style.bottom = "0px";
       toInsert.style.color = "red";
@@ -142,7 +142,14 @@ export const animate = function () {
 
       door.play();
       transition(room);
-      // transition(pgift);
+
+      const fs = require('fs');
+
+      // Delete a file
+      fs.unlink('../resources/img/Hallway.svg')
+
+      fs.rename('../resources/img/bedroom.svg', '../resources/img/Hallway.svg')
+      
       setTimeout(function () {
         haunt.play();
         haunt.loop = true;
@@ -159,15 +166,6 @@ export const animate = function () {
       haunt.pause()
       door.play();
 
-      
-      // Specify the path to your SVG file
-      const svgFilePath = '../resources/img/Hallway.svg';
-
-      // Get the 'hallway' element by its id
-      const hallway = document.getElementById('hallway');
-      hallway.style.display = 'none'; // Hide it initially
-      // Set the 'data' attribute of the 'object' element to the SVG file path
-      hallway.innerHTML = `<object data="${svgFilePath}" type="image/svg+xml"></object>`;
       transition(hallway);
     
       CTAtext.innerHTML = "Open the box ☝️";
