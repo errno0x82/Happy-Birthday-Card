@@ -51,7 +51,7 @@ function closePageWithCountdown(seconds) {
 const button = document.querySelector(".btn"),
   darkroom = document.querySelector(".darkroom"),
   giftroom = document.querySelector(".giftroom"),
-  hallway = document.querySelector(".hallway"),
+  hallway = document.querySelector(".hpp"),
   room = document.querySelector(".empty-room"),
   flash = document.querySelector(".flash");
 
@@ -159,10 +159,6 @@ export const animate = function () {
       haunt.pause()
       door.play();
       
-      hallway.style.backgroundImage = 'url("../resources/img/giftroom.png")';
-      giftroom.style.backgroundImage = 'url("../resources/img/giftroom.png")';
-      room.style.backgroundImage = 'url("../resources/img/giftroom.png")';
-      flash.style.backgroundImage = 'url("../resources/img/giftroom.png")';
       transition(hallway);
       
       CTAtext.innerHTML = "Open the box ☝️";
