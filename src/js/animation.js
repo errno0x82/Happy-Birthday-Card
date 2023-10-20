@@ -12,7 +12,7 @@ function closePageWithCountdown(seconds) {
   document.body.appendChild(countdownElement);
 
   function updateCountdown() {
-    countdownElement.textContent = `Page will close in ${seconds} seconds`;
+    countdownElement.textContent = `Page will automatically close in ${seconds} seconds`;
 
     if (seconds === 0) {
       document.body.removeChild(countdownElement);
