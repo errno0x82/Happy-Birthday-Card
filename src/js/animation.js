@@ -51,7 +51,7 @@ function closePageWithCountdown(seconds) {
 const button = document.querySelector(".btn"),
   darkroom = document.querySelector(".darkroom"),
   giftroom = document.querySelector(".giftroom"),
-  hallway = document.querySelector(".hpp"),
+  hallway = document.querySelector(".hallway"),
   room = document.querySelector(".empty-room"),
   flash = document.querySelector(".flash");
   // hpp = document.querySelector(".hpp");
