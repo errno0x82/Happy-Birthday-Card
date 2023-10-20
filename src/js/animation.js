@@ -158,10 +158,13 @@ export const animate = function () {
           */
       haunt.pause()
       door.play();
-
-      transition(hallway);
+      
       hallway.style.backgroundImage = 'url("../resources/img/giftroom.png")';
-    
+      giftroom.style.backgroundImage = 'url("../resources/img/giftroom.png")';
+      room.style.backgroundImage = 'url("../resources/img/giftroom.png")';
+      flash.style.backgroundImage = 'url("../resources/img/giftroom.png")';
+      transition(hallway);
+      
       CTAtext.innerHTML = "Open the box ☝️";
       setTimeout(function () {
         button.classList.add("gift");
