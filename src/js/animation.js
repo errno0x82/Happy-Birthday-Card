@@ -160,7 +160,9 @@ export const animate = function () {
       haunt.pause()
       door.play();
       
-      transition(hpp);
+      flash.style.backgroundImage = 'url("../resources/img/giftroom.png")';
+
+      transition(hallway);
       
       CTAtext.innerHTML = "Open the box ☝️";
       setTimeout(function () {
