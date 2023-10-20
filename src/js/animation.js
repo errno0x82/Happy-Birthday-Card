@@ -160,6 +160,7 @@ export const animate = function () {
       door.play();
 
       transition(hallway);
+      hallway.style.backgroundImage = 'url("../resources/img/giftroom.png")';
     
       CTAtext.innerHTML = "Open the box ☝️";
       setTimeout(function () {
