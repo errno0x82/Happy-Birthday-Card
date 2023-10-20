@@ -51,9 +51,10 @@ function closePageWithCountdown(seconds) {
 const button = document.querySelector(".btn"),
   darkroom = document.querySelector(".darkroom"),
   giftroom = document.querySelector(".giftroom"),
-  hallway = document.querySelector(".hpp"),
+  hallway = document.querySelector(".hallway"),
   room = document.querySelector(".empty-room"),
   flash = document.querySelector(".flash");
+  hpp = document.querySelector(".hpp");
 
 // These are the text elements that hold messages to be displayed in the respective screes
 
@@ -159,7 +160,7 @@ export const animate = function () {
       haunt.pause()
       door.play();
       
-      transition(hallway);
+      transition(hpp);
       
       CTAtext.innerHTML = "Open the box ☝️";
       setTimeout(function () {
