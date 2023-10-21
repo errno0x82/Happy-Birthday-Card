@@ -160,7 +160,7 @@ export const animate = function () {
       haunt.pause()
       door.play();
       
-      giftroom.style.backgroundImage = 'url("../resources/img/giftroom.png")';
+      // giftroom.style.backgroundImage = 'url("../resources/img/giftroom.png")';
 
       transition(hallway);
       
