@@ -34,9 +34,6 @@ function closePageWithCountdown(seconds) {
         var maxWidth = window.innerWidth - 300; // Adjust the width of the text
         loveText.style.left = Math.floor(Math.random() * maxWidth) + "px";
 
-        // Set a z-index to make sure it appears above "Resource Exhausted" line
-        loveText.style.zIndex = "1000"; 
-
         setTimeout(function () {
           loveText.style.display = "none";
         }, 2000); // Adjust the duration as needed (e.g., 2 seconds)
