@@ -80,18 +80,16 @@ const light = document.querySelector(".switch-aud"),
 
 //  readMsg() displays the paras in each scene successively. It takes an array of the para elements as input.
 
-const readMsg = (text) => {
-  for (let i = 0; i < text.length; i++) {
-    // this loop goes through all the text msg paras
+const readMsg = (text, i = 0) => {
+  if (i < text.length) {
     setTimeout(() => {
-      // A timeout of 5s ia applied to all text elements so that appear successively one after the other
-      text[i].classList.add("read"); // this adds a fadeIn-fadeOut animation to elements
+      text[i].classList.add("read");
       if (i === text.length - 1) {
-        // this ensures that the button appears only after the last text is displayed.
         button.style.display = "inline-block";
         CTAtext.style.display = "block";
       }
-    }, 5000 * i);
+      readMsg(text, i + 1);
+    }, 5000);
   }
 };
 
@@ -160,8 +158,6 @@ export const animate = function () {
       haunt.pause()
       door.play();
       
-      // giftroom.style.backgroundImage = 'url("../resources/img/giftroom.png")';
-
       transition(hallway);
       
       CTAtext.innerHTML = "Open the box ☝️";
