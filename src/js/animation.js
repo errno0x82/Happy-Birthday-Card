@@ -16,8 +16,23 @@ function closePageWithCountdown(seconds) {
 
     if (seconds === 0) {
       document.body.removeChild(countdownElement);
-      document.getElementsByTagName ('html')[0].remove();
+      document.getElementsByTagName('html')[0].remove();
       document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
+
+      function showLoveText() {
+         var loveText = document.createElement("div");
+         loveText.innerHTML = "I love you Sriparna";
+         loveText.style.position = "absolute";
+         loveText.style.color = "red";
+         loveText.style.fontWeight = "bold";
+         loveText.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+         loveText.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+         document.body.appendChild(loveText);
+         setTimeout(function () {
+           loveText.style.display = "none";
+         }, 2000); // Adjust the duration as needed (e.g., 2 seconds)
+      }
+           
       var toInsert = document.createElement("div");
       toInsert.innerHTML = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋";
       toInsert.style.position = "absolute";
@@ -28,16 +43,19 @@ function closePageWithCountdown(seconds) {
       document.body.appendChild(toInsert);
       document.getElementsByTagName('html')[0].style.overflow = 'hidden';
       document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-      
+
       var colors = ['red', 'blue', 'green']; // List of rainbow colors
       var colorIndex = 0; // Initialize color index
 
       function flash() {
-       toInsert.style.color = colors[colorIndex];
-       colorIndex = (colorIndex + 1) % colors.length; // Cycle through colors
+            toInsert.style.color = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length; // Cycle through colors
       }
 
       var clr = setInterval(flash, 500);
+
+      // Call the showLoveText function at an interval (e.g., every 5 seconds)
+      setInterval(showLoveText, 5000); // Adjust the timing as needed
     
     } else {
       seconds--;
