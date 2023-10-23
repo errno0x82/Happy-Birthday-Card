@@ -27,13 +27,9 @@ function closePageWithCountdown(seconds) {
         loveText.style.position = "absolute";
         loveText.style.color = "red";
         loveText.style.fontWeight = "bold";
-        // Calculate the maximum top position to ensure it stays above "Resource Exhausted" line
-        var maxTop = window.innerHeight - 200; // Adjust the value as needed
-        loveText.style.top = Math.floor(Math.random() * maxTop) + "px";
-    
+        
         var maxWidth = window.innerWidth - 300; // Adjust the width of the text
         loveText.style.left = Math.floor(Math.random() * maxWidth) + "px";
-        loveText.style.zIndex = "1000";
         document.body.appendChild(loveText);
         
         setTimeout(function () {
