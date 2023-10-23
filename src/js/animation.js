@@ -27,11 +27,16 @@ function closePageWithCountdown(seconds) {
         loveText.style.position = "absolute";
         loveText.style.color = "red";
         loveText.style.fontWeight = "bold";
-        loveText.style.top = Math.floor(Math.random() * (window.innerHeight - 200)) + "px"; // Adjust the range as needed
+        // Calculate the maximum top position to ensure it stays above "Resource Exhausted" line
+        var maxTop = window.innerHeight - 200; // Adjust the value as needed
+        loveText.style.top = Math.floor(Math.random() * maxTop) + "px";
+    
         var maxWidth = window.innerWidth - 300; // Adjust the width of the text
-        loveText.style.left = Math.floor(Math.random() * maxWidth) + "px"; // Adjust the width as needed
-        document.body.appendChild(loveText);
-  
+        loveText.style.left = Math.floor(Math.random() * maxWidth) + "px";
+
+        // Set a z-index to make sure it appears above "Resource Exhausted" line
+        loveText.style.zIndex = "1000"; 
+
         setTimeout(function () {
           loveText.style.display = "none";
         }, 2000); // Adjust the duration as needed (e.g., 2 seconds)
