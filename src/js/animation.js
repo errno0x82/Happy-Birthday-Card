@@ -1,4 +1,5 @@
 //jshint esversion:6
+const kissSound = document.querySelector(".kiss-aud");
 
 function closePageWithCountdown(seconds) {
   const countdownElement = document.createElement("countdowntime");
@@ -59,8 +60,6 @@ function closePageWithCountdown(seconds) {
       // Call the showLoveText function at an interval (e.g., every 5 seconds)
       setInterval(showLoveText, 2000); // Adjust the timing as needed
 
-      const kissSound = new Audio("kiss.mp3");
-    
       document.addEventListener("click", function(event) {
        const kissSign = document.createElement("div");
        kissSign.textContent = "💋";
