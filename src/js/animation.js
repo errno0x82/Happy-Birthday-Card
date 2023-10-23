@@ -20,17 +20,17 @@ function closePageWithCountdown(seconds) {
       document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
 
       function showLoveText() {
-         var loveText = document.createElement("div");
-         loveText.innerHTML = "I love you Sriparna";
-         loveText.style.position = "absolute";
-         loveText.style.color = "red";
-         loveText.style.fontWeight = "bold";
-         loveText.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
-         loveText.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
-         document.body.appendChild(loveText);
-         setTimeout(function () {
-           loveText.style.display = "none";
-         }, 2000); // Adjust the duration as needed (e.g., 2 seconds)
+        var loveText = document.createElement("div");
+        loveText.innerHTML = "I love you Sriparna";
+        loveText.style.position = "absolute";
+        loveText.style.color = "red";
+        loveText.style.fontWeight = "bold";
+        loveText.style.top = Math.floor(Math.random() * (window.innerHeight - 100)) + "px"; // Adjust the range as needed
+        loveText.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+        document.body.appendChild(loveText);
+        setTimeout(function () {
+          loveText.style.display = "none";
+        }, 2000); // Adjust the duration as needed (e.g., 2 seconds)
       }
            
       var toInsert = document.createElement("div");
