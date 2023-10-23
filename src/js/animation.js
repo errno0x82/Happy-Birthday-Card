@@ -27,7 +27,7 @@ function closePageWithCountdown(seconds) {
         loveText.style.position = "absolute";
         loveText.style.color = "red";
         loveText.style.fontWeight = "bold";
-        loveText.style.top = Math.floor(Math.random() * (window.innerHeight - 100)) + "px"; // Adjust the range as needed
+        loveText.style.top = Math.floor(Math.random() * (window.innerHeight - 300)) + "px"; // Adjust the range as needed
         var maxWidth = window.innerWidth - 300; // Adjust the width of the text
         loveText.style.left = Math.floor(Math.random() * maxWidth) + "px"; // Adjust the width as needed
         document.body.appendChild(loveText);
@@ -38,7 +38,7 @@ function closePageWithCountdown(seconds) {
       }
            
       var centeredText = document.createElement("div");
-      centeredText.textContent = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋";
+      centeredText.innerHTML = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋";
       centeredText.style.position = "fixed";
       centeredText.style.bottom = "0";
       centeredText.style.left = "0";
