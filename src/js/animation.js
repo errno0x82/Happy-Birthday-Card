@@ -33,7 +33,9 @@ function closePageWithCountdown(seconds) {
     
         var maxWidth = window.innerWidth - 300; // Adjust the width of the text
         loveText.style.left = Math.floor(Math.random() * maxWidth) + "px";
-
+        loveText.style.zIndex = "1000";
+        document.body.appendChild(loveText);
+        
         setTimeout(function () {
           loveText.style.display = "none";
         }, 2000); // Adjust the duration as needed (e.g., 2 seconds)
