@@ -62,6 +62,7 @@ function closePageWithCountdown(seconds) {
 
       document.addEventListener("click", function(event) {
        const kissSign = document.createElement("div");
+       const kissSound = new Audio("../resources/sfx/kiss.mp3");
        kissSign.textContent = "💋";
        kissSign.style.position = "absolute";
        kissSign.style.fontSize = "24px";
@@ -71,7 +72,10 @@ function closePageWithCountdown(seconds) {
        kissSign.style.left = (event.clientX - 12) + "px";
        kissSign.style.top = (event.clientY - 12) + "px";    
        document.body.appendChild(kissSign);
-
+        
+       // Play the kiss sound
+       kissSound.play();
+        
        // Enlarge the kiss sign
        requestAnimationFrame(function() {
          kissSign.style.transform = "scale(2)";
