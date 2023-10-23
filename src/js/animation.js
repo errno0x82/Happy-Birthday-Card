@@ -80,9 +80,11 @@ function closePageWithCountdown(seconds) {
        document.body.appendChild(kissSign);
         
        // Play the kiss sound
-       kissSound.play();
+       // kissSound.play();
        loveSound.play();
-        
+       loveSound.addEventListener("ended", function() {
+         kissSound.play();
+       });
        // Enlarge the kiss sign
        requestAnimationFrame(function() {
          kissSign.style.transform = "scale(2)";
