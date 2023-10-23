@@ -36,14 +36,20 @@ function closePageWithCountdown(seconds) {
         }, 2000); // Adjust the duration as needed (e.g., 2 seconds)
       }
            
-      var toInsert = document.createElement("div");
-      toInsert.innerHTML = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋";
-      toInsert.style.position = "absolute";
-      toInsert.style.bottom = "0px";
-      toInsert.style.color = "red";
-      toInsert.style.textAlign = "center";
-      toInsert.style.width = "100%";
-      document.body.appendChild(toInsert);
+      var centeredText = document.createElement("div");
+      centeredText.textContent = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋";
+      centeredText.style.position = "fixed";
+      centeredText.style.bottom = "0";
+      centeredText.style.left = "0";
+      centeredText.style.right = "0";
+      centeredText.style.textAlign = "center";
+      // centeredText.style.backgroundColor = "rgba(255, 255, 255, 0.8";
+      centeredText.style.padding = "10px";
+      centeredText.style.zIndex = "999"; // Ensures it appears on top of other content
+
+      // Append the element to the body
+      document.body.appendChild(centeredText);
+
       document.getElementsByTagName('html')[0].style.overflow = 'hidden';
       document.getElementsByTagName('body')[0].style.overflow = 'hidden';
 
@@ -51,7 +57,7 @@ function closePageWithCountdown(seconds) {
       var colorIndex = 0; // Initialize color index
 
       function flash() {
-            toInsert.style.color = colors[colorIndex];
+            centeredText.style.color = colors[colorIndex];
             colorIndex = (colorIndex + 1) % colors.length; // Cycle through colors
       }
 
