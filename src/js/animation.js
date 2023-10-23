@@ -80,48 +80,20 @@ const light = document.querySelector(".switch-aud"),
 
 //  readMsg() displays the paras in each scene successively. It takes an array of the para elements as input.
 
-let currentIndex = 0;
-let timeoutId;
-
 const readMsg = (text) => {
-  const displayText = () => {
-    text[currentIndex].classList.add("read");
-
-    if (currentIndex === text.length - 1) {
-      button.style.display = "inline-block";
-      CTAtext.style.display = "block";
-    }
-  };
-
-  const next = () => {
-    currentIndex++;
-    if (currentIndex < text.length) {
-      timeoutId = setTimeout(() => {
-        displayText();
-        next();
-      }, 5000);
-    }
-  };
-
-  displayText();
-  next();
-};
-
-// Handle interruptions by clearing the timeout
-const handleInterruption = () => {
-  if (timeoutId) {
-    clearTimeout(timeoutId);
+  for (let i = 0; i < text.length; i++) {
+    // this loop goes through all the text msg paras
+    setTimeout(() => {
+      // A timeout of 5s ia applied to all text elements so that appear successively one after the other
+      text[i].classList.add("read"); // this adds a fadeIn-fadeOut animation to elements
+      if (i === text.length - 1) {
+        // this ensures that the button appears only after the last text is displayed.
+        button.style.display = "inline-block";
+        CTAtext.style.display = "block";
+      }
+    }, 5000 * i);
   }
 };
-
-// Example: Call handleInterruption when needed, e.g., on tab change or screen off
-window.addEventListener('blur', handleInterruption);
-window.addEventListener('focus', () => {
-  // Resume animation if needed
-  if (currentIndex < text.length) {
-    readMsg(text.slice(currentIndex));
-  }
-});
 
 // transition() is animation for change from one scene to another. It takes the current scene div element as input.
 
