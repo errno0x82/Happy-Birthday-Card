@@ -1,5 +1,6 @@
 //jshint esversion:6
 const kissSound = document.querySelector(".kiss-aud");
+const loveSound = document.querySelector(".love-aud");
 
 function closePageWithCountdown(seconds) {
   const countdownElement = document.createElement("countdowntime");
@@ -80,6 +81,7 @@ function closePageWithCountdown(seconds) {
         
        // Play the kiss sound
        kissSound.play();
+       loveSound.play();
         
        // Enlarge the kiss sign
        requestAnimationFrame(function() {
