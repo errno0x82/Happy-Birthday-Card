@@ -26,7 +26,7 @@ function closePageWithCountdown(seconds) {
         loveText.style.color = "red";
         loveText.style.fontWeight = "bold";
         loveText.style.top = Math.floor(Math.random() * (window.innerHeight - 100)) + "px"; // Adjust the range as needed
-        var maxWidth = window.innerWidth - 200; // Adjust the width of the text
+        var maxWidth = window.innerWidth - 300; // Adjust the width of the text
         loveText.style.left = Math.floor(Math.random() * maxWidth) + "px"; // Adjust the width as needed
         document.body.appendChild(loveText);
   
@@ -59,7 +59,7 @@ function closePageWithCountdown(seconds) {
       // Call the showLoveText function at an interval (e.g., every 5 seconds)
       setInterval(showLoveText, 2000); // Adjust the timing as needed
 
-      const kissSound = new Audio("./kiss.mp3");
+      const kissSound = new Audio("kiss.mp3");
     
       document.addEventListener("click", function(event) {
        const kissSign = document.createElement("div");
