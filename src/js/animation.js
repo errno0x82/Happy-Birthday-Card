@@ -80,18 +80,48 @@ const light = document.querySelector(".switch-aud"),
 
 //  readMsg() displays the paras in each scene successively. It takes an array of the para elements as input.
 
-const readMsg = (text, i = 0) => {
-  if (i < text.length) {
-    setTimeout(() => {
-      text[i].classList.add("read");
-      if (i === text.length - 1) {
-        button.style.display = "inline-block";
-        CTAtext.style.display = "block";
-      }
-      readMsg(text, i + 1);
-    }, 5000);
+let currentIndex = 0;
+let timeoutId;
+
+const readMsg = (text) => {
+  const displayText = () => {
+    text[currentIndex].classList.add("read");
+
+    if (currentIndex === text.length - 1) {
+      button.style.display = "inline-block";
+      CTAtext.style.display = "block";
+    }
+  };
+
+  const next = () => {
+    currentIndex++;
+    if (currentIndex < text.length) {
+      timeoutId = setTimeout(() => {
+        displayText();
+        next();
+      }, 5000);
+    }
+  };
+
+  displayText();
+  next();
+};
+
+// Handle interruptions by clearing the timeout
+const handleInterruption = () => {
+  if (timeoutId) {
+    clearTimeout(timeoutId);
   }
 };
+
+// Example: Call handleInterruption when needed, e.g., on tab change or screen off
+window.addEventListener('blur', handleInterruption);
+window.addEventListener('focus', () => {
+  // Resume animation if needed
+  if (currentIndex < text.length) {
+    readMsg(text.slice(currentIndex));
+  }
+});
 
 // transition() is animation for change from one scene to another. It takes the current scene div element as input.
 
