@@ -69,7 +69,7 @@ function closePageWithCountdown(seconds) {
 
       document.addEventListener("click", function(event) {
        const kissSign = document.createElement("div");
-       kissSign.textContent = "💋";
+       kissSign.textContent = "♥️";
        kissSign.style.position = "absolute";
        kissSign.style.fontSize = "24px";
        kissSign.style.color = "red";
