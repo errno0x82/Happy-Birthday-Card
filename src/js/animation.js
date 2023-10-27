@@ -1,6 +1,6 @@
 //jshint esversion:6
-const kissSound = document.querySelector(".kiss-aud");
-const loveSound = document.querySelector(".love-aud");
+//const kissSound = document.querySelector(".kiss-aud");
+//const loveSound = document.querySelector(".love-aud");
 
 function closePageWithCountdown(seconds) {
   const countdownElement = document.createElement("countdowntime");
@@ -79,12 +79,6 @@ function closePageWithCountdown(seconds) {
        kissSign.style.top = (event.clientY - 12) + "px";    
        document.body.appendChild(kissSign);
         
-       // Play the kiss sound
-       // kissSound.play();
-       loveSound.play();
-       loveSound.addEventListener("ended", function() {
-         kissSound.play();
-       });
        // Enlarge the kiss sign
        requestAnimationFrame(function() {
          kissSign.style.transform = "scale(2)";
