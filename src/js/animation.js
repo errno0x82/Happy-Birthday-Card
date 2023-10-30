@@ -53,6 +53,21 @@ function closePageWithCountdown(seconds) {
 
       document.getElementsByTagName('html')[0].style.overflow = 'hidden';
       document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+      // Disable scrolling
+      window.addEventListener('scroll', function (e) {
+         window.scrollTo(0, 0); // Reset scroll position
+      });
+
+      // Disable zooming using mousewheel
+      window.addEventListener('wheel', function (e) {
+         e.preventDefault();
+      });
+
+      // Disable zooming using touch gestures
+      window.addEventListener('touchmove', function (e) {
+         e.preventDefault();
+      });
+      
 
       var colors = ['red', 'blue', 'green']; // List of rainbow colors
       var colorIndex = 0; // Initialize color index
