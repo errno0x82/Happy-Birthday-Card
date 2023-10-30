@@ -54,21 +54,6 @@ function closePageWithCountdown(seconds) {
       document.getElementsByTagName('html')[0].style.overflow = 'hidden';
       document.getElementsByTagName('body')[0].style.overflow = 'hidden';
       
-      document.addEventListener('keydown', function(e) {
-       if (e.ctrlKey || e.metaKey || e.key === 'Control' || e.key === 'Meta') {
-        e.preventDefault();
-       }
-      });
-
-      document.addEventListener('mousewheel', function(e) {
-       e.preventDefault();
-      });
-
-      document.addEventListener('gesturestart', function(e) {
-       e.preventDefault();
-      });
-      
-
       var colors = ['red', 'blue', 'green']; // List of rainbow colors
       var colorIndex = 0; // Initialize color index
 
