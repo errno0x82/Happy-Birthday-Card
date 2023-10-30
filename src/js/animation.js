@@ -48,6 +48,20 @@ function closePageWithCountdown(seconds) {
       centeredText.style.padding = "10px";
       centeredText.style.zIndex = "999"; // Ensures it appears on top of other content
 
+      // Create a text element
+      const playText = document.createElement("diiv");
+      playText.textContent = "Click to Play Video";
+      playText.style.cursor = "pointer";
+      playText.style.position = "absolute";
+      playText.style.top = "50%";
+      playText.style.left = "50%";
+      playText.style.transform = "translate(-50%, -50%)";
+      playText.style.color = "yellow"; // Highlight with yellow color
+      playText.style.fontSize = "24px"; // Increase text size
+      playText.style.fontWeight = "bold"; // Make text bold
+      document.body.appendChild(playText);
+
+      
       // Append the element to the body
       document.body.appendChild(centeredText);
 
