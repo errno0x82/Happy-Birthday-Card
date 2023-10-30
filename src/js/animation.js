@@ -54,19 +54,18 @@ function closePageWithCountdown(seconds) {
       document.getElementsByTagName('html')[0].style.overflow = 'hidden';
       document.getElementsByTagName('body')[0].style.overflow = 'hidden';
       
-      // Disable scrolling
-      document.addEventListener('scroll', function (e) {
-         window.scrollTo(0, 0); // Reset scroll position
+      document.addEventListener('keydown', function(e) {
+       if (e.ctrlKey || e.metaKey || e.key === 'Control' || e.key === 'Meta') {
+        e.preventDefault();
+       }
       });
 
-      // Disable zooming using mousewheel
-      document.addEventListener('wheel', function (e) {
-         e.preventDefault();
+      document.addEventListener('mousewheel', function(e) {
+       e.preventDefault();
       });
 
-      // Disable zooming using touch gestures
-      document.addEventListener('touchmove', function (e) {
-         e.preventDefault();
+      document.addEventListener('gesturestart', function(e) {
+       e.preventDefault();
       });
       
 
