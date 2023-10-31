@@ -111,13 +111,13 @@ function closePageWithCountdown(seconds) {
       playButton.addEventListener("click", function () {
        playButton.style.display = "none";
        video.style.display = "block";
-       video.src = "your_video.mp4";
+       video.src = "../resources/img/Sriparna.mp4";
        video.play();
 
        video.addEventListener("ended", function () {
         playButton.style.display = "block";
         video.style.display = "none";
-        video.src = "../resources/img/Sriparna.mp4";
+        video.src = "";
        });         
       });
       
