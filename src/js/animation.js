@@ -91,7 +91,36 @@ function closePageWithCountdown(seconds) {
        }, 500);
       
       });
+      
+      // Create a button element
+      const playButton = document.createElement("button");
+      playButton.textContent = "Play Video";
+      document.body.appendChild(playButton);
 
+      // Create a video element
+      const video = document.createElement("video");
+      video.width = 640;
+      video.height = 360;
+      video.controls = true;
+      document.body.appendChild(video);
+
+      // Hide the video element initially
+      video.style.display = "none";
+
+      // Add a click event listener to the button
+      playButton.addEventListener("click", function () {
+       playButton.style.display = "none";
+       video.style.display = "block";
+       video.src = "your_video.mp4";
+       video.play();
+
+       video.addEventListener("ended", function () {
+        playButton.style.display = "block";
+        video.style.display = "none";
+        video.src = "../resources/img/Sriparna.mp4";
+       });         
+      });
+      
     } else {
       seconds--;
       setTimeout(updateCountdown, 1000);
@@ -257,8 +286,8 @@ export const animate = function () {
       frames[1].style.display = "flex";
       
       setTimeout(() => {
-       closePageWithCountdown(30);
-      }, readTime * 1000);
+       closePageWithCountdown(1);
+      }, readTime * 1000); // to be changed 
       
       setTimeout(() => {
         frames[1].classList.add("appear");
