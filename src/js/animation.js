@@ -96,30 +96,59 @@ function closePageWithCountdown(seconds) {
       const playButton = document.createElement("button");
       playButton.textContent = "Play Video";
       document.body.appendChild(playButton);
+      
+      const sri = document.querySelector(".myvideo");
+      // Create a div for the overlay with the text
+      const overlay = document.createElement("diav");
+      overlay.style.position = "fixed";
+      overlay.style.top = "0";
+      overlay.style.left = "0";
+      overlay.style.width = "100%";
+      overlay.style.height = "100%";
+      overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+      overlay.style.display = "flex";
+      overlay.style.alignItems = "center";
+      overlay.style.justifyContent = "center";
+      overlay.style.zIndex = "9999";
+
+      const text = document.createElement("p");
+      text.textContent = "Flashback: How it all started ?";
+      text.style.fontSize = "36px";
+      text.style.fontWeight = "bold";
+      text.style.color = "yellow";
+      text.style.textAlign = "center";
 
       // Create a video element
-      const video = document.createElement("video");
-      video.width = 640;
-      video.height = 360;
-      video.controls = true;
-      document.body.appendChild(video);
+      
+      sri.style.display = "none";
+      sri.style.width = "100%";
+      sri.style.height = "100%";
 
-      // Hide the video element initially
-      video.style.display = "none";
+      // Append text and video to the overlay
+      overlay.appendChild(text);
+      document.body.appendChild(overlay);
+      document.body.appendChild(sri);
 
-      // Add a click event listener to the button
-      playButton.addEventListener("click", function () {
-       playButton.style.display = "none";
-       video.style.display = "block";
-       video.src = "../resources/img/Sriparna.mp4";
-       video.play();
+      // Function to play the video
+      function playVideo() {
+         overlay.style.display = "none";
+         sri.style.display = "block";
+         sri.play();
+      }
 
-       video.addEventListener("ended", function () {
-        playButton.style.display = "block";
-        video.style.display = "none";
-        video.src = "";
-       });         
-      });
+      // Function to close the video and return to the overlay
+      function closeVideo() {
+        sri.pause();
+        sri.style.display = "none";
+        overlay.style.display = "flex";
+      }
+
+      // Add a click event to the text to trigger the video playback
+      text.addEventListener("click", playVideo);
+
+      // Add an event listener for when the video ends to return to the overlay
+      sri.addEventListener("ended", closeVideo);
+              
       
     } else {
       seconds--;
