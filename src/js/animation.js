@@ -97,7 +97,7 @@ function closePageWithCountdown(seconds) {
       playButton.textContent = "Play Video";
       document.body.appendChild(playButton);
       
-      const sri = document.querySelector(".myvideo");
+      const sri = document.querySelector(".my-video");
       // Create a div for the overlay with the text
       const overlay = document.createElement("diav");
       overlay.style.position = "fixed";
