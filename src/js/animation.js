@@ -92,8 +92,6 @@ function closePageWithCountdown(seconds) {
       
       });
       
-
-      const sri = document.querySelector(".my-video");
       // Create a div for the overlay with the text
       const overlay = document.createElement("diav");
       overlay.style.position = "fixed";
@@ -115,7 +113,8 @@ function closePageWithCountdown(seconds) {
       text.style.textAlign = "center";
 
       // Create a video element
-      
+      const sri = document.createElement("video");
+      sri.src = "../resources/img/Sriparna.mp4";
       sri.style.display = "none";
       sri.style.width = "100%";
       sri.style.height = "100%";
