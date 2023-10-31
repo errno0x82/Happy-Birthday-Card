@@ -92,11 +92,7 @@ function closePageWithCountdown(seconds) {
       
       });
       
-      // Create a button element
-      const playButton = document.createElement("button");
-      playButton.textContent = "Play Video";
-      document.body.appendChild(playButton);
-      
+
       const sri = document.querySelector(".my-video");
       // Create a div for the overlay with the text
       const overlay = document.createElement("diav");
