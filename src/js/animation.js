@@ -66,9 +66,9 @@ function closePageWithCountdown(seconds) {
        video.controls = false; // Hide controls
 
        // Set the source of the video
-       var source = document.createElement('source');
-       source.src = '../resources/img/Sriparna.mp4'; // Replace with the path to your video
-       source.type = 'video/mp4';
+       var source = document.querySelector(".sourcev");
+       // source.src = '../resources/img/Sriparna.mp4'; // Replace with the path to your video
+       // source.type = 'video/mp4';
 
        // Append source to video element
        video.appendChild(source);
