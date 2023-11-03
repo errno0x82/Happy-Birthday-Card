@@ -66,7 +66,7 @@ function closePageWithCountdown(seconds) {
        video.style.transform = 'translate(-50%, -50%) rotate(90deg)'; // Rotate the video 90 degrees
        video.style.width = '100vh'; // Use viewport height as width for landscape
        video.style.height = '100vw'; // Use viewport width as height for landscape
-       video.style.objectFit = 'cover'; // Ensure it covers the full area
+       video.style.objectFit = 'contain'; // Ensure it covers the full area
        video.autoplay = true;
        video.controls = false; // Hide controls
 
