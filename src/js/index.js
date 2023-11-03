@@ -14,10 +14,6 @@ if (/Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent))
 
 alert("Welcome Darling ♥️\nPlease consider increasing your volume to maximum for a better experience !");
 
-var source = document.createElement('sourcev');
-source.src = '../resources/img/Sriparna.mp4'; // Replace with the path to your video
-source.type = 'video/mp4';
-
 // Close the alert after 1 second
 setTimeout(function() {
   var alertBox = document.querySelector(".alert");
