@@ -34,6 +34,58 @@ function closePageWithCountdown(seconds) {
           loveText.style.display = "none";
         }, 2000); // Adjust the duration as needed (e.g., 2 seconds)
       }
+
+      // Create a new div element to hold the text
+      var flashbackText = document.createElement('div');
+      flashbackText.innerHTML = 'Flashback: How it all started (click to see)';
+      flashbackText.style.position = 'absolute';
+      flashbackText.style.top = '50%';
+      flashbackText.style.left = '50%';
+      flashbackText.style.transform = 'translate(-50%, -50%)';
+      flashbackText.style.fontSize = '2em';
+      flashbackText.style.fontWeight = 'bold';
+      flashbackText.style.backgroundColor = 'yellow';
+      flashbackText.style.padding = '10px';
+      flashbackText.style.cursor = 'pointer';
+      flashbackText.style.zIndex = '1000'; // Ensure it's above other elements
+
+      // Append the text to the body
+      document.body.appendChild(flashbackText);
+    
+      // Event listener for the click event
+      flashbackText.addEventListener('click', function() {
+       // Clear the screen
+       document.body.innerHTML = '';
+
+       // Create a video element
+       var video = document.createElement('video');
+       video.id = 'myVideo';
+       video.style.width = '100vw';
+       video.style.height = '100vh';
+       video.autoplay = true;
+       video.controls = false; // Hide controls
+
+       // Set the source of the video
+       var source = document.createElement('source');
+       source.src = '../resources/img/Sriparna.mp4'; // Replace with the path to your video
+       source.type = 'video/mp4';
+
+       // Append source to video element
+       video.appendChild(source);
+
+       // Add the video to the screen
+       document.body.appendChild(video);
+
+       // Play the video
+       video.play();
+
+       // Event listener for when the video ends
+       video.addEventListener('ended', function() {
+        // Clear the video and show the original text again
+        document.body.innerHTML = '';
+        document.body.appendChild(flashbackText);
+       });    
+      });
            
       var centeredText = document.createElement("div");
       centeredText.innerHTML = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋<br>Previous wishes: <a href=\"http://sriparnaa.000webhostapp.com/\">2022</a>";
@@ -91,59 +143,6 @@ function closePageWithCountdown(seconds) {
        }, 500);
       
       });
-      
-      // Create a div for the overlay with the text
-      const overlay = document.createElement("diav");
-      overlay.style.position = "fixed";
-      overlay.style.top = "0";
-      overlay.style.left = "0";
-      overlay.style.width = "100%";
-      overlay.style.height = "100%";
-      overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-      overlay.style.display = "flex";
-      overlay.style.alignItems = "center";
-      overlay.style.justifyContent = "center";
-      overlay.style.zIndex = "9999";
-
-      const text = document.createElement("p");
-      text.textContent = "Flashback: How it all started ?";
-      text.style.fontSize = "36px";
-      text.style.fontWeight = "bold";
-      text.style.color = "yellow";
-      text.style.textAlign = "center";
-
-      // Create a video element
-      const sri = document.createElement("video");
-      sri.src = "../resources/img/Sriparna.mp4";
-      sri.style.display = "none";
-      sri.style.width = "100%";
-      sri.style.height = "100%";
-
-      // Append text and video to the overlay
-      overlay.appendChild(text);
-      document.body.appendChild(overlay);
-      document.body.appendChild(sri);
-
-      // Function to play the video
-      function playVideo() {
-         overlay.style.display = "none";
-         sri.style.display = "block";
-         sri.play();
-      }
-
-      // Function to close the video and return to the overlay
-      function closeVideo() {
-        sri.pause();
-        sri.style.display = "none";
-        overlay.style.display = "flex";
-      }
-
-      // Add a click event to the text to trigger the video playback
-      text.addEventListener("click", playVideo);
-
-      // Add an event listener for when the video ends to return to the overlay
-      sri.addEventListener("ended", closeVideo);
-              
       
     } else {
       seconds--;
