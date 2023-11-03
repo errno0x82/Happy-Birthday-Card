@@ -42,7 +42,7 @@ function closePageWithCountdown(seconds) {
       flashbackText.style.top = '50%';
       flashbackText.style.left = '50%';
       flashbackText.style.transform = 'translate(-50%, -50%)';
-      flashbackText.style.fontSize = '2em';
+      flashbackText.style.fontSize = '1.5em';
       flashbackText.style.fontWeight = 'bold';
       flashbackText.style.backgroundColor = 'yellow';
       flashbackText.style.padding = '10px';
