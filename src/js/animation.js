@@ -19,22 +19,6 @@ function closePageWithCountdown(seconds) {
       document.getElementsByTagName('html')[0].remove();
       document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
 
-      function showLoveText() {
-        var loveText = document.createElement("div");
-        loveText.innerHTML = "I love you Sriparna";
-        loveText.style.position = "absolute";
-        loveText.style.color = "red";
-        loveText.style.fontWeight = "bold";
-        loveText.style.top = Math.floor(Math.random() * (window.innerHeight - 100)) + "px";
-        var maxWidth = window.innerWidth - 200; // Adjust the width of the text
-        loveText.style.left = Math.floor(Math.random() * maxWidth) + "px";
-        document.body.appendChild(loveText);
-        
-        setTimeout(function () {
-          loveText.style.display = "none";
-        }, 2000); // Adjust the duration as needed (e.g., 2 seconds)
-      }
-
       // Create a new div element to hold the text
       var flashbackText = document.createElement('div');
       flashbackText.innerHTML = 'Flashback: How it all started (click to see)';
@@ -119,36 +103,6 @@ function closePageWithCountdown(seconds) {
 
       var clr = setInterval(flash, 500);
 
-      // Call the showLoveText function at an interval (e.g., every 5 seconds)
-      setInterval(showLoveText, 2000); // Adjust the timing as needed
-
-      document.addEventListener("click", function(event) {
-       const kissSign = document.createElement("div");
-       kissSign.textContent = "♥️";
-       kissSign.style.position = "absolute";
-       kissSign.style.fontSize = "24px";
-       kissSign.style.color = "red";
-       kissSign.style.transform = "scale(1)";
-       kissSign.style.transition = "transform 0.5s, opacity 1s";
-       kissSign.style.left = (event.clientX - 12) + "px";
-       kissSign.style.top = (event.clientY - 12) + "px";    
-       document.body.appendChild(kissSign);
-        
-       // Enlarge the kiss sign
-       requestAnimationFrame(function() {
-         kissSign.style.transform = "scale(2)";
-       });
-
-       // Delay and then fade and remove the kiss sign
-       setTimeout(function() {
-        kissSign.style.opacity = "0";
-        setTimeout(function() {
-            document.body.removeChild(kissSign);
-        }, 1000);
-       }, 500);
-      
-      });
-      
     } else {
       seconds--;
       setTimeout(updateCountdown, 1000);
