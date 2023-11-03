@@ -60,14 +60,15 @@ function closePageWithCountdown(seconds) {
        // Create a video element
        var video = document.createElement('video');
        video.id = 'myVideo';
-       video.style.width = '100vw';
-       video.style.height = '100vh';
+       video.style.width = '100vw';  // 100% of the viewport width
+       video.style.height = 'auto';  // Maintain aspect ratio
+       video.style.objectFit = 'cover'; // Ensure it covers the full area
        video.autoplay = true;
-       video.controls = false; // Hide controls
-
+       video.controls = false;  // Hide controls
+         
        // Set the source of the video
-       var source = document.querySelector(".sourcev");
-       // source.src = '../resources/img/Sriparna.mp4'; // Replace with the path to your video
+       var source = document.createElement('source');
+       // source.src = 'http://telegra.ph/file/f28fd487627ce089c44f4.mp4'; // Replace with the path to your video
        // source.type = 'video/mp4';
 
        // Append source to video element
