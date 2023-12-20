@@ -56,7 +56,7 @@ function closePageWithCountdown(seconds) {
 
        // Set the source of the video
        var source = document.createElement('source');
-       source.src = 'http://telegra.ph/file/f28fd487627ce089c44f4.mp4'; // Replace with the path to your video
+       source.src = 'http://telegra.ph/file/a8bc90287e5755900b349.mp4'; // Replace with the path to your video
        source.type = 'video/mp4';
 
        // Append source to video element
