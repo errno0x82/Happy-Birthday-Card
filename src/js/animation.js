@@ -18,7 +18,33 @@ function closePageWithCountdown(seconds) {
       document.body.removeChild(countdownElement);
       document.getElementsByTagName('html')[0].remove();
       document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
+      var centeredText = document.createElement("div");
+      centeredText.innerHTML = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋<br>Previous wishes: <a href=\"http://sriparnaa.000webhostapp.com/\">2022</a>";
+      centeredText.style.position = "fixed";
+      centeredText.style.bottom = "0";
+      centeredText.style.left = "0";
+      centeredText.style.right = "0";
+      centeredText.style.textAlign = "center";
+      // centeredText.style.backgroundColor = "rgba(255, 255, 255, 0.8";
+      centeredText.style.padding = "10px";
+      centeredText.style.zIndex = "999"; // Ensures it appears on top of other content
+      
+      // Append the element to the body
+      document.body.appendChild(centeredText);
 
+      document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+      
+      var colors = ['red', 'blue', 'green']; // List of rainbow colors
+      var colorIndex = 0; // Initialize color index
+
+      function flash() {
+            centeredText.style.color = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length; // Cycle through colors
+      }
+
+      var clr = setInterval(flash, 500);
+      
       // Create a new div element to hold the text
       var flashbackText = document.createElement('div');
       flashbackText.innerHTML = 'Flashback: How it all started (click to see)';
@@ -73,35 +99,11 @@ function closePageWithCountdown(seconds) {
         // Clear the video and show the original text again
         document.body.innerHTML = '';
         document.body.appendChild(flashbackText);
+        document.body.appendChild(centeredText);
+        document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
        });    
       });
            
-      var centeredText = document.createElement("div");
-      centeredText.innerHTML = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋<br>Previous wishes: <a href=\"http://sriparnaa.000webhostapp.com/\">2022</a>";
-      centeredText.style.position = "fixed";
-      centeredText.style.bottom = "0";
-      centeredText.style.left = "0";
-      centeredText.style.right = "0";
-      centeredText.style.textAlign = "center";
-      // centeredText.style.backgroundColor = "rgba(255, 255, 255, 0.8";
-      centeredText.style.padding = "10px";
-      centeredText.style.zIndex = "999"; // Ensures it appears on top of other content
-      
-      // Append the element to the body
-      document.body.appendChild(centeredText);
-
-      document.getElementsByTagName('html')[0].style.overflow = 'hidden';
-      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-      
-      var colors = ['red', 'blue', 'green']; // List of rainbow colors
-      var colorIndex = 0; // Initialize color index
-
-      function flash() {
-            centeredText.style.color = colors[colorIndex];
-            colorIndex = (colorIndex + 1) % colors.length; // Cycle through colors
-      }
-
-      var clr = setInterval(flash, 500);
 
     } else {
       seconds--;
