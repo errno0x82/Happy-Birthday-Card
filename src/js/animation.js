@@ -47,7 +47,7 @@ function closePageWithCountdown(seconds) {
       
       // Create a new div element to hold the text
       var flashbackText = document.createElement('div');
-      flashbackText.innerHTML = 'Flashback: How it all started (Funny)';
+      flashbackText.innerHTML = 'Flashback: Old Memories (Funny animation)';
       flashbackText.style.position = 'absolute';
       flashbackText.style.top = '50%';
       flashbackText.style.left = '50%';
