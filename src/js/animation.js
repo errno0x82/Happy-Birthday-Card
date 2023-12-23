@@ -91,6 +91,14 @@ function closePageWithCountdown(seconds) {
        // Add the video to the screen
        document.body.appendChild(video);
 
+       video.onloadedmetadata = function() {
+         console.log('Video metadata loaded successfully');
+         console.log('Video duration:', video.duration);
+       }; 
+       video.onerror = function() {
+        console.error('Error loading the video');
+       };      
+        
        // Play the video
        video.play();
 
