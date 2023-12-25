@@ -46,12 +46,12 @@ function closePageWithCountdown(seconds) {
       var clr = setInterval(flash, 500);
 
       var flashbackText = document.createElement('div');
-      flashbackText.innerHTML = 'Flashback: Old Memories (A funny animation)';
+      flashbackText.innerHTML = 'Flashback:<br>Old Memories<br>(A funny animation)';
       flashbackText.style.position = 'absolute';
       flashbackText.style.top = '50%';
       flashbackText.style.left = '50%';
       flashbackText.style.transform = 'translate(-50%, -50%)';
-      flashbackText.style.fontSize = '1.5em';
+      flashbackText.style.fontSize = '1.4em';
       flashbackText.style.fontWeight = 'bold';
       flashbackText.style.backgroundColor = 'yellow';
       flashbackText.style.padding = '10px';
@@ -76,7 +76,7 @@ function closePageWithCountdown(seconds) {
         video.controls = false;
 
         var source = document.createElement('source');
-        source.src = 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4';
+        source.src = './Sriparna.mp4';
         source.type = 'video/mp4';
 
         video.appendChild(source);
