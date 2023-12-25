@@ -1,7 +1,7 @@
 //jshint esversion:6
 
 function closePageWithCountdown(seconds) {
-  const countdownElement = document.createElement("div");
+  const countdownElement = document.createElement("countdowntime");
   countdownElement.style.position = "fixed";
   countdownElement.style.top = "0";
   countdownElement.style.left = "0";
@@ -16,26 +16,26 @@ function closePageWithCountdown(seconds) {
 
     if (seconds === 0) {
       document.body.removeChild(countdownElement);
-
-      document.getElementsByTagName('html')[0].remove();
-      document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
-
+      //document.getElementsByTagName('html')[0].remove();
+      //document.write('Resource Exhaustedd !\n<br>You may reload the page or close the tab.');
       var centeredText = document.createElement("div");
-      centeredText.innerHTML = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋<br>Previous wishes: <a href=\"http://sriparna19th.netlify.app/\">2022</a>";
+      centeredText.innerHTML = "This site was created on the occasion of 21st birthday of Mrs. Sriparna Roy (my crush) on 28/09/2024.<br>If you do not know her, then you are at the wrong place amigo !<br>Hasta La Vista 👋<br>Previous wishes: <a href=\"http://sriparna19th.netlify.app/\">2022";
       centeredText.style.position = "fixed";
       centeredText.style.bottom = "0";
       centeredText.style.left = "0";
       centeredText.style.right = "0";
       centeredText.style.textAlign = "center";
+      // centeredText.style.backgroundColor = "rgba(255, 255, 255, 0.8";
       centeredText.style.padding = "10px";
       centeredText.style.zIndex = "999"; // Ensures it appears on top of other content
 
+      // Append the element to the body
       document.body.appendChild(centeredText);
 
-      document.getElementsByTagName('html')[0].style.overflow = 'hidden';
-      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+      document.getElementsByTagName("html")[0].style.overflow = "hidden";
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
 
-      var colors = ['red', 'blue', 'green']; // List of rainbow colors
+      var colors = ["red", "blue", "green"]; // List of rainbow colors
       var colorIndex = 0; // Initialize color index
 
       function flash() {
@@ -45,61 +45,76 @@ function closePageWithCountdown(seconds) {
 
       var clr = setInterval(flash, 500);
 
-      var flashbackText = document.createElement('div');
-      flashbackText.innerHTML = 'Flashback:<br>Old Memories<br>(A funny animation)';
-      flashbackText.style.position = 'absolute';
-      flashbackText.style.top = '50%';
-      flashbackText.style.left = '50%';
-      flashbackText.style.transform = 'translate(-50%, -50%)';
-      flashbackText.style.fontSize = '1.4em';
-      flashbackText.style.fontWeight = 'bold';
-      flashbackText.style.backgroundColor = 'yellow';
-      flashbackText.style.padding = '10px';
-      flashbackText.style.cursor = 'pointer';
-      flashbackText.style.zIndex = '1000';
+      // Create a new div element to hold the text
+      var flashbackText = document.createElement("div");
+      flashbackText.innerHTML = "Click here to watch";
+      flashbackText.style.position = "absolute";
+      flashbackText.style.top = "50%";
+      flashbackText.style.left = "50%";
+      flashbackText.style.transform = "translate(-50%, -50%)";
+      flashbackText.style.fontSize = "1.5em";
+      flashbackText.style.fontWeight = "bold";
+      flashbackText.style.backgroundColor = "yellow";
+      flashbackText.style.padding = "10px";
+      flashbackText.style.cursor = "pointer";
+      flashbackText.style.zIndex = "1000"; // Ensure it's above other elements
 
+      // Append the text to the body
       document.body.appendChild(flashbackText);
 
-      flashbackText.addEventListener('click', function() {
-        document.body.innerHTML = '';
+      // Event listener for the click event
+      flashbackText.addEventListener("click", function () {
+        // Clear the screen
+        document.body.innerHTML = "Flashback:<br>Old Memories<br>(A funny animation)";
 
-        var video = document.createElement('video');
-        video.id = 'myVideo';
-        video.style.position = 'absolute';
-        video.style.top = '50%';
-        video.style.left = '50%';
-        video.style.transform = 'translate(-50%, -50%) rotate(90deg)';
-        video.style.width = '100vh';
-        video.style.height = '100vw';
-        video.style.objectFit = 'contain';
+        // Create a video element
+        var video = document.createElement("video");
+        video.id = "myVideo";
+        video.style.position = "absolute";
+        video.style.top = "50%";
+        video.style.left = "50%";
+        video.style.transform = "translate(-50%, -50%) rotate(90deg)"; // Rotate the video 90 degrees
+        video.style.width = "100vh"; // Use viewport height as width for landscape
+        video.style.height = "100vw"; // Use viewport width as height for landscape
+        video.style.objectFit = "contain"; // Ensure it covers the full area
         video.autoplay = true;
-        video.controls = false;
+        video.controls = false; // Hide controls
 
-        var source = document.createElement('source');
-        source.src = './Sriparna.mp4';
-        source.type = 'video/mp4';
+        // Set the source of the video
+        //var source = document.createElement('source');
+        //source.src = './myvideo.mp4'; // Replace with the path to your video
+        video.src = "./Sriparna.mp4"; // Replace with the path to your video
+        video.type = "video/mp4";
+        //source.type = 'video/mp4';
 
-        video.appendChild(source);
+        // Append source to video element
+        //document..appendChild(source);
+
+        // Add the video to the screen
         document.body.appendChild(video);
 
-        video.onloadedmetadata = function() {
-          console.log('Video metadata loaded successfully');
-          console.log('Video duration:', video.duration);
+        video.onloadedmetadata = function () {
+          console.log("Video metadata loaded successfully");
+          console.log("Video duration:", video.duration);
         };
-        video.onerror = function() {
-          console.error('Error loading the video');
+        video.onerror = function () {
+          console.error("Error loading the video");
         };
 
+        // Play the video
         video.play();
 
-        video.addEventListener('ended', function() {
-          document.body.innerHTML = '';
+        // Event listener for when the video ends
+        video.addEventListener("ended", function () {
+          // Clear the video and show the original text again
+          document.body.innerHTML = "";
           document.body.appendChild(flashbackText);
           document.body.appendChild(centeredText);
-          document.write('Resource Exhausted !\n<br>You may reload the page or close the tab.');
+          document.write(
+            "Resource Exhausted !\n<br>You may reload the page or close the tab."
+          );
         });
       });
-
     } else {
       seconds--;
       setTimeout(updateCountdown, 1000);
