@@ -1,5 +1,5 @@
 //jshint esversion:6
-import "./Sriparna.mp4";
+
 function closePageWithCountdown(seconds) {
   const countdownElement = document.createElement("div");
   countdownElement.style.position = "fixed";
