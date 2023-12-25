@@ -76,7 +76,7 @@ function closePageWithCountdown(seconds) {
         video.controls = false;
 
         var source = document.createElement('source');
-        source.src = './src/js/Sriparna.mp4';
+        source.src = '../resources/sfx/Sriparna.mp4';
         source.type = 'video/mp4';
 
         video.appendChild(source);
