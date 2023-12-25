@@ -76,7 +76,7 @@ function closePageWithCountdown(seconds) {
         video.controls = false;
 
         var source = document.createElement('source');
-        source.src = '../resources/sfx/Sriparna.mp4';
+        source.src = 'https://telegra.ph/file/9d80fe1d60b2896d8b47b.mp4';
         source.type = 'video/mp4';
 
         video.appendChild(source);
