@@ -4,5 +4,5 @@
   command = "npm run build"
 
 [template.environment]
-  NAME = "sriparna01"
-  PIC = "https://ibb.co/zmHrsBv"
+  NAME = ""
+  PIC = ""
