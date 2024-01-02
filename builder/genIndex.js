@@ -1,6 +1,20 @@
 const fs = require("fs");
 const path = require("path");
 
+// Assuming your file is named "example.txt"
+const filePath = '../local/sriparna.mp4';
+
+// Use the fetch API to load the content of the file
+fetch(filePath)
+  .then(response => response.text())
+  .then(data => {
+    // Do something with the content of the file
+    console.log("SRIPARNA MP4 IS IMPORTED SUCCESSFULLY");
+  })
+  .catch(error => {
+    console.error('Error loading file:', error);
+  });
+
 const genIndex = function (markup) {
   let html = fs.readFileSync(path.join(__dirname, "../src/template.html"), {
     encoding: "utf-8",
