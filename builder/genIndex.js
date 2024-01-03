@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 
+const filePath = path.join(__dirname, "../local/sriparna.mp4");
+const videoContent = fs.readFileSync(filePath, 'base64');
+
 const genIndex = function (markup) {
   let html = fs.readFileSync(path.join(__dirname, "../src/template.html"), {
     encoding: "utf-8",
@@ -33,3 +36,6 @@ const genIndex = function (markup) {
 };
 
 module.exports = genIndex;
+//module.exports = videoContent;
+//window.videoContent = videoContent;
+exports.videoContent = videoContent;
