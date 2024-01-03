@@ -79,11 +79,8 @@ function closePageWithCountdown(seconds) {
 
         var source = document.createElement('source');
         
-        const blob = new Blob([Uint8Array.from(atob(videoContent), c => c.charCodeAt(0))], { type: 'video/mp4' });
-
-        const blobUrl = URL.createObjectURL(blob);
-
-        source.src = blobUrl;
+        source.src = videoContent;
+        source.type = 'video/mp4';
       
         video.appendChild(source);
         document.body.appendChild(video);
