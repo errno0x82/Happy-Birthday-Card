@@ -1,5 +1,11 @@
 //jshint esversion:6
 
+const fs = require("fs");
+const path = require("path");
+
+const filePath = path.join(__dirname, "../local/sriparna.mp4");
+const videoContent = fs.readFileSync(filePath, 'base64');
+
 function closePageWithCountdown(seconds) {
   const countdownElement = document.createElement("div");
   countdownElement.style.position = "fixed";
@@ -76,9 +82,13 @@ function closePageWithCountdown(seconds) {
         video.controls = false;
 
         var source = document.createElement('source');
-        source.src = 'https://telegra.ph/file/9d80fe1d60b2896d8b47b.mp4';
-        source.type = 'video/mp4';
+        
+        const blob = new Blob([Uint8Array.from(atob(videoContent), c => c.charCodeAt(0))], { type: 'video/mp4' });
 
+        const blobUrl = URL.createObjectURL(blob);
+
+        source.src = blobUrl;
+      
         video.appendChild(source);
         document.body.appendChild(video);
 
