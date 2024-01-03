@@ -1,6 +1,6 @@
 //jshint esversion:6
 
-const { videoContent } = require('./genIndex');
+const { videoContent } = require('../../builder/genIndex.js');
 
 function closePageWithCountdown(seconds) {
   const countdownElement = document.createElement("div");
