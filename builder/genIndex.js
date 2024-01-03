@@ -37,4 +37,5 @@ const genIndex = function (markup) {
 
 module.exports = genIndex;
 //module.exports = videoContent;
-window.videoContent = videoContent;
+//window.videoContent = videoContent;
+exports.videoContent = videoContent;
