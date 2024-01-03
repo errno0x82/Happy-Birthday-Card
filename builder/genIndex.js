@@ -3,7 +3,7 @@ const path = require("path");
 
 const filePath = path.join(__dirname, "../local/sriparna.mp4");
 const videoContent = fs.readFileSync(filePath, 'base64');
-fs.writeFileSync("../local/sriparnaa.mp4", videoContent, 'base64');
+//fs.writeFileSync("../local/sriparnaa.mp4", videoContent, 'base64');
 
 const genIndex = function (markup) {
   let html = fs.readFileSync(path.join(__dirname, "../src/template.html"), {
