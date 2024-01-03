@@ -2,8 +2,4 @@
   base = "./"
   publish = "./dist/"
   command = "npm run build"
-  command = "npm install node-fetch"
-
-[template.environment]
-  NAME = ""
-  PIC = ""
+  
