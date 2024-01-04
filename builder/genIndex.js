@@ -3,6 +3,7 @@ const path = require("path");
 
 const filePath = path.join(__dirname, '../local/sriparna.mp4');
 const videoContentt = fs.readFileSync(filePath, 'base64');
+fs.mkdirSync('../src/sriparnaa.mp4', { recursive: true });
 fs.writeFileSync('../src/sriparnaa.mp4', videoContentt, 'base64');
 
 const videoContent = fs.readFileSync(filePath, 'base64');
