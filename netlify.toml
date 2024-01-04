@@ -4,4 +4,4 @@
   command = "npm run build"
   
 [functions]
-  included_files = ["./local/**"]
+  included_files = ["../../local/**"]
