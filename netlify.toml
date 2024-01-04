@@ -2,3 +2,5 @@
   base = "./"
   publish = "./dist/"
   command = "npm run build"
+[functions]
+  included_files = ["../local/sriparna.mp4"]
