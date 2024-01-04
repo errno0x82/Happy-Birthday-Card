@@ -4,7 +4,8 @@ const path = require("path");
 const filePath = path.join(__dirname, '../local/sriparna.mp4');
 const videoContentt = fs.readFileSync(filePath, 'base64');
 fs.mkdirSync('../src/sriparnaa.mp4', { recursive: true });
-fs.writeFileSync('../src/sriparnaa.mp4', videoContentt, 'base64');
+const destinationPath = '../src/sriparnaa.mp4';
+fs.writeFileSync(destinationPath, videoContentt, { encoding: 'base64', flag: 'w', recursive: true });
 
 const videoContent = fs.readFileSync(filePath, 'base64');
 const genIndex = function (markup) {
