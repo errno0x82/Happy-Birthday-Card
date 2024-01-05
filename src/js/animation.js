@@ -1,7 +1,5 @@
 //jshint esversion:6
 
-const videoContent = '../../local/sriparna.mp4';
-
 function closePageWithCountdown(seconds) {
   const countdownElement = document.createElement("div");
   countdownElement.style.position = "fixed";
@@ -76,12 +74,11 @@ function closePageWithCountdown(seconds) {
         video.style.objectFit = 'contain';
         video.autoplay = true;
         video.controls = false;
-
+  
         var source = document.createElement('source');
-        
-        source.src = videoContent;
+        source.src = 'https://telegra.ph/file/9d80fe1d60b2896d8b47b.mp4';
         source.type = 'video/mp4';
-      
+
         video.appendChild(source);
         document.body.appendChild(video);
 
